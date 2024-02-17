@@ -75,9 +75,11 @@ name = "advanced-programming-2024-demo"
 version = "0.1.0"
 dependencies = [
  "cursive",
+ "macroquad",
  "midgard",
  "olympus",
  "ragnarok",
+ "rip_worldgenerator",
  "robotics_lib",
 ]
 
@@ -1162,6 +1164,12 @@ dependencies = [
 ]
 
 [[package]]
+name = "disjoint-sets"
+version = "0.4.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4ccbbca7d6a247007ca2535c616d4bb4a5fcad176ef0218671f96b88c52c3d34"
+
+[[package]]
 name = "dispatch"
 version = "0.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1179,7 +1187,7 @@ version = "0.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "330c60081dcc4c72131f8eb70510f1ac07223e5d4163db481a04a0befcffa412"
 dependencies = [
- "libloading 0.7.4",
+ "libloading 0.8.1",
 ]
 
 [[package]]
@@ -1193,6 +1201,12 @@ name = "downcast-rs"
 version = "1.2.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "9ea835d29036a4087793836fa931b08837ad5e957da9e23886b29586fb9b6650"
+
+[[package]]
+name = "dsu-tree"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "5129cb0f5913dca11778e19863d3d436f4725662fafc3d6ae82caa7ee5a865ea"
 
 [[package]]
 name = "dwrote"
@@ -3118,6 +3132,21 @@ name = "renderdoc-sys"
 version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "216080ab382b992234dda86873c18d4c48358f5cfcb70fd693d7f6f2131b628b"
+
+[[package]]
+name = "rip_worldgenerator"
+version = "0.5.57"
+source = "sparse+https://advancedprogramming.disi.unitn.it/api/v1/crates/"
+checksum = "6c36e459979f8c17440c3390819d82d6a515576547c21c230d09d2518c155d28"
+dependencies = [
+ "disjoint-sets",
+ "dsu-tree",
+ "noise",
+ "petgraph",
+ "rand 0.8.5",
+ "rand_chacha 0.3.1",
+ "robotics_lib",
+]
 
 [[package]]
 name = "robotics_lib"

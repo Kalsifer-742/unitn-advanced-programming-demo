@@ -7,9 +7,11 @@ edition = "2021"
 
 [dependencies]
 robotics_lib = { version = "0.1.21", registry = "kellnr" }
+rip_worldgenerator = { version = "0.5.57", registry = "kellnr" }
 midgard = { version = "0.1.4" , registry = "kellnr" }
 olympus = { git = "https://github.com/Kalsifer-742/olympus.git", tag = "v1.2.1" }
 ragnarok = { git = "https://github.com/circled-square/ragnarok.git", tag = "0.4.6" }
 # bmo = { git = "https://github.com/silvanusbordignon/bmo.git" }
 # add AI repo by andrea
 cursive = "0.20.0"
+macroquad = "0.4.4"
