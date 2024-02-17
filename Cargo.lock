@@ -81,6 +81,7 @@ dependencies = [
  "ragnarok",
  "rip_worldgenerator",
  "robotics_lib",
+ "strum",
 ]
 
 [[package]]
@@ -2891,8 +2892,8 @@ dependencies = [
 
 [[package]]
 name = "ragnarok"
-version = "0.4.6"
-source = "git+https://github.com/circled-square/ragnarok.git?tag=0.4.6#2a08cc49be4267e878937aad9706c3d7928924c6"
+version = "0.4.7"
+source = "git+https://github.com/circled-square/ragnarok.git?tag=0.4.7#9943afc9b030da46cc6c99c5ebba9e7b77de4a97"
 dependencies = [
  "glium",
  "glutin 0.31.3",
