@@ -156,8 +156,8 @@ fn main() {
     siv.add_global_callback('q', |s| s.quit());
 
     siv.add_layer(Dialog::text("What do you want to do?")
-        .button("View World generator", move |s| start_midgard_visualizer(s))
         .button("Play game", |s| open_game_settings(s))
+        .button("View World generator", move |s| start_midgard_visualizer(s))
     );
 
     siv.run();
