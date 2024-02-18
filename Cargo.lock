@@ -3390,8 +3390,8 @@ dependencies = [
 
 [[package]]
 name = "ragnarok"
-version = "0.4.8"
-source = "git+https://github.com/circled-square/ragnarok.git?tag=0.4.8#1fd02762846bbdfd8c8b3d7349d6929511141bf9"
+version = "0.4.9"
+source = "git+https://github.com/circled-square/ragnarok.git?tag=0.4.9#ab2763f0ca89b2a19d22a51b79abe0dd77795196"
 dependencies = [
  "glium",
  "glutin 0.31.3",

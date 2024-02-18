@@ -10,7 +10,7 @@ robotics_lib = { version = "0.1.21", registry = "kellnr" }
 rip_worldgenerator = { version = "0.5.57", registry = "kellnr" }
 midgard = { version = "0.2.1", features = [ "visualizer" ], registry = "kellnr" }
 olympus = { version = "2.0.0", git = "https://github.com/Kalsifer-742/olympus.git", tag = "v2.0.0" }
-ragnarok = { version = "0.4.8", git = "https://github.com/circled-square/ragnarok.git", tag = "0.4.8" }
+ragnarok = { version = "0.4.9", git = "https://github.com/circled-square/ragnarok.git", tag = "0.4.9" }
 bmo = { git = "https://github.com/silvanusbordignon/bmo.git" }
 ai = { git = "https://github.com/arvt/ai.git" }
 cursive = "0.20.0"
