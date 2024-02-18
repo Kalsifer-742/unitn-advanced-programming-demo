@@ -1,18 +1,18 @@
-[submodule "mirror/swift_seller"]
-	path = mirror/swift_seller
+[submodule "mirrors/swift_seller"]
+	path = mirrors/swift_seller
 	url = https://github.com/silvanusbordignon/swift_seller
-[submodule "mirror/midgard"]
-	path = mirror/midgard
+[submodule "mirrors/midgard"]
+	path = mirrors/midgard
 	url = https://github.com/circled-square/midgard.git
-[submodule "mirror/olympus"]
-	path = mirror/olympus
+[submodule "mirrors/olympus"]
+	path = mirrors/olympus
 	url = git@github.com:Kalsifer-742/olympus.git
-[submodule "mirror/ragnarok"]
-	path = mirror/ragnarok
+[submodule "mirrors/ragnarok"]
+	path = mirrors/ragnarok
 	url = https://github.com/circled-square/ragnarok.git
-[submodule "mirror/ai"]
-	path = mirror/ai
+[submodule "mirrors/ai"]
+	path = mirrors/ai
 	url = https://github.com/arvt/ai.git
-[submodule "mirror/bmo"]
-	path = mirror/bmo
+[submodule "mirrors/bmo"]
+	path = mirrors/bmo
 	url = https://github.com/silvanusbordignon/bmo.git
