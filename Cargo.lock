@@ -110,7 +110,7 @@ dependencies = [
 [[package]]
 name = "ai"
 version = "0.1.0"
-source = "git+https://github.com/arvt/ai.git#4af8a0b7ffed247fb02135953d5f85d70c1aceaf"
+source = "git+https://github.com/arvt/ai.git#b41846ddfc04d23c87b6f9b114fc857d2e210205"
 dependencies = [
  "asfalt_inator",
  "cargo_commandos_lucky",
