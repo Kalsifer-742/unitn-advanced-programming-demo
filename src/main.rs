@@ -38,8 +38,8 @@ fn open_game_settings(s: &mut Cursive) {
 
     let robot_layout = LinearLayout::vertical()
         .child(robot_text)
-        .child(robot_radio.button("bmo", "bmo"))
-        .child(robot_radio.button("ai", "ai"));
+        .child(robot_radio.button("ai", "ai"))
+        .child(robot_radio.button("bmo", "bmo"));
     let world_generator_layout = LinearLayout::vertical()
         .child(world_generator_text)
         .child(world_generator_radio.button("rip", "rip_worldgenerator"))
