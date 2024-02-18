@@ -39,7 +39,7 @@ fn open_game_settings(s: &mut Cursive) {
     let robot_layout = LinearLayout::vertical()
         .child(robot_text)
         .child(robot_radio.button("bmo", "bmo"))
-        .child(robot_radio.button("andr", "androgeo"));
+        .child(robot_radio.button("ai", "ai"));
     let world_generator_layout = LinearLayout::vertical()
         .child(world_generator_text)
         .child(world_generator_radio.button("rip", "rip_worldgenerator"))
@@ -142,14 +142,12 @@ fn get_world_generator(selection: String) -> (GeneratorWrapper, usize) {
 }
 
 fn start_olympus_visualizer(robot_selection: String, world_generator_selection: String) {
-    let command = "demo";
+    let command = "target/release/examples/olympus-demo";
     let args = [robot_selection, world_generator_selection];
-    let working_dir = "../olympus/";
     Command::new(command)
         .args(&args)
-        .current_dir(working_dir)
-        .status()
-        .expect("Error running olympus demo");
+        .output()
+        .expect("Error running olympus");
 }
 
 fn main() {
