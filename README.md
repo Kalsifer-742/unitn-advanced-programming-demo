@@ -34,7 +34,7 @@ Individual projects:
 
 Before running the demo do:
 
-`cargo build --release example olympus-demo`
+`cargo build --release --example olympus-demo`
 
 To run the demo use:
 
