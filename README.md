@@ -6,10 +6,10 @@
 This demo combines the work of the `#![allow(bad_code)]` group.
 
 Members:
-- Silvanus Bordignon (group leader)
-- Andrea Ervetti
-- Matteo Possamai
-- Enrico Dalla Croce
+- [Silvanus Bordignon](https://github.com/silvanusbordignon) (group leader)
+- [Andrea Ervetti](https://github.com/arvt)
+- [Matteo Possamai](https://github.com/circled_square)
+- [Enrico Dalla Croce](https://github.com/kalsifer-742)
 
 
 Group projects:
