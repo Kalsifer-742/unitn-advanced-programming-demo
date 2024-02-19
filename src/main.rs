@@ -27,6 +27,15 @@ fn start_midgard_visualizer(s: &mut Cursive) {
     }, 1000)
 }
 
+fn start_swift_seller_demo(s: &mut Cursive) {
+    s.quit();
+
+    let command = "target/release/examples/swift_seller_demo";
+    Command::new(command)
+        .output()
+        .expect("Error running swift_seller demo");
+}
+
 fn open_game_settings(s: &mut Cursive) {
     let mut robot_radio = RadioGroup::new();
     let mut world_generator_radio = RadioGroup::new();
@@ -91,7 +100,6 @@ fn start_game(s: &mut Cursive, robot_selection: String, world_generator_selectio
 }
 
 fn get_robot(selection: String, channel: Rc<RefCell<Channel>>) -> Box<dyn Runnable> {
-    
     let robot = if selection == "bmo" {
         Box::new(
             BMO::new(channel)
@@ -142,12 +150,12 @@ fn get_world_generator(selection: String) -> (GeneratorWrapper, usize) {
 }
 
 fn start_olympus_visualizer(robot_selection: String, world_generator_selection: String) {
-    let command = "target/release/examples/olympus-demo";
+    let command = "target/release/examples/olympus_demo";
     let args = [robot_selection, world_generator_selection];
     Command::new(command)
         .args(&args)
         .output()
-        .expect("Error running olympus");
+        .expect("Error running olympus demo");
 }
 
 fn main() {
@@ -157,7 +165,8 @@ fn main() {
 
     siv.add_layer(Dialog::text("What do you want to do?")
         .button("Play game", |s| open_game_settings(s))
-        .button("View World generator", move |s| start_midgard_visualizer(s))
+        .button("View midgard world generator", move |s| start_midgard_visualizer(s))
+        .button("Try swift_seller tool", move |s| start_swift_seller_demo(s))
     );
 
     siv.run();

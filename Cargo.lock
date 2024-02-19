@@ -83,6 +83,7 @@ dependencies = [
  "ragnarok",
  "rip_worldgenerator",
  "robotics_lib",
+ "swift_seller",
 ]
 
 [[package]]
@@ -110,7 +111,7 @@ dependencies = [
 [[package]]
 name = "ai"
 version = "0.1.0"
-source = "git+https://github.com/arvt/ai.git#f546d2b903c371126ed1a779585436ea79d2318f"
+source = "git+https://github.com/arvt/ai.git#0a8ef2a05478b8b63d3ffcc7475d18c39cae35b1"
 dependencies = [
  "asfalt_inator",
  "cargo_commandos_lucky",
@@ -256,9 +257,9 @@ dependencies = [
 
 [[package]]
 name = "asfalt_inator"
-version = "0.5.0"
+version = "0.5.1"
 source = "sparse+https://advancedprogramming.disi.unitn.it/api/v1/crates/"
-checksum = "5bb549758ea51ca2c0914bff744953d5b309838f7c43d94ba768b1567060a59b"
+checksum = "182c9440147efd022f4f14471aee67b9756dc45d23e59f302c104bc696a9aa7e"
 dependencies = [
  "lazy_static",
  "robotics_lib",
@@ -814,7 +815,7 @@ dependencies = [
 [[package]]
 name = "bmo"
 version = "0.1.0"
-source = "git+https://github.com/silvanusbordignon/bmo.git#6d2a23d5095efd7a7ddeb736ba1589a5cba46daf"
+source = "git+https://github.com/silvanusbordignon/bmo.git#3f210db5b3d79ea3ed3505ce1385de935d479068"
 dependencies = [
  "asfalt_inator",
  "cargo_commandos_lucky",
@@ -3998,6 +3999,15 @@ dependencies = [
  "quote",
  "rustversion",
  "syn 2.0.49",
+]
+
+[[package]]
+name = "swift_seller"
+version = "0.1.3"
+source = "sparse+https://advancedprogramming.disi.unitn.it/api/v1/crates/"
+checksum = "9baecc24e4dfe5d319e7a69111605a61935b5d413402ad2de8d637afa5d44318"
+dependencies = [
+ "robotics_lib",
 ]
 
 [[package]]
