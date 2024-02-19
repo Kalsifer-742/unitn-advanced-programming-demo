@@ -111,7 +111,7 @@ dependencies = [
 [[package]]
 name = "ai"
 version = "0.1.0"
-source = "git+https://github.com/arvt/ai.git#13f99dbb8f83f8bbb814624ee26a4e877df8433c"
+source = "git+https://github.com/arvt/ai.git#54bed27fb63a968235115500d410e23ce755e3e6"
 dependencies = [
  "asfalt_inator",
  "cargo_commandos_lucky",
@@ -3391,8 +3391,8 @@ dependencies = [
 
 [[package]]
 name = "ragnarok"
-version = "0.4.11"
-source = "git+https://github.com/circled-square/ragnarok.git?tag=0.4.11#5ee9b5e35661fbedcde8c4bcdfdd6110e2eb8551"
+version = "0.4.12"
+source = "git+https://github.com/circled-square/ragnarok.git?tag=0.4.12#d0fcd59622e0b03bb9a9982d5b13c39fc0f22f3e"
 dependencies = [
  "glium",
  "glutin 0.31.3",
