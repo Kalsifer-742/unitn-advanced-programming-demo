@@ -111,7 +111,7 @@ dependencies = [
 [[package]]
 name = "ai"
 version = "0.1.0"
-source = "git+https://github.com/arvt/ai.git#0a8ef2a05478b8b63d3ffcc7475d18c39cae35b1"
+source = "git+https://github.com/arvt/ai.git#13f99dbb8f83f8bbb814624ee26a4e877df8433c"
 dependencies = [
  "asfalt_inator",
  "cargo_commandos_lucky",
@@ -3156,7 +3156,7 @@ dependencies = [
 [[package]]
 name = "olympus"
 version = "2.0.0"
-source = "git+https://github.com/Kalsifer-742/olympus.git?tag=v2.0.0#6d0f403a5c0fadc9f0a08883ac4dd2829801df60"
+source = "git+https://github.com/Kalsifer-742/olympus.git?tag=v2.0.0#c2334e5ff349e96b84578a0a7da4c175e50babf4"
 dependencies = [
  "macroquad",
  "robotics_lib",
