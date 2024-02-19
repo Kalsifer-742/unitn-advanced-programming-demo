@@ -35,6 +35,7 @@ Individual projects:
 Before running the demo do:
 
 `cargo build --release --example olympus_demo`
+
 `cargo build --release --example swift_seller_demo`
 
 To run the demo use:
