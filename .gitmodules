@@ -6,7 +6,7 @@
 	url = https://github.com/circled-square/midgard.git
 [submodule "mirrors/olympus"]
 	path = mirrors/olympus
-	url = git@github.com:Kalsifer-742/olympus.git
+	url = https://github.com/Kalsifer-742/olympus.git
 [submodule "mirrors/ragnarok"]
 	path = mirrors/ragnarok
 	url = https://github.com/circled-square/ragnarok.git
