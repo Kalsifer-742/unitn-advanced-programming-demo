@@ -1,0 +1,48 @@
+name: Contributors & Version Progress
+
+on:
+  push:
+    branches: [ "master"]
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  contributors:
+    runs-on: [self-hosted, linux]
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Version progress (minor)
+        continue-on-error: true
+        shell: bash
+        if: ${{ github.event_name == 'workflow_dispatch' }}
+        run: |
+          autover Cargo.toml -minor
+
+      - name: Version progress (patch)
+        continue-on-error: true
+        shell: bash
+        if: ${{ github.event_name == 'push' }}
+        run: |
+          autover Cargo.toml -patch
+
+      - name: Update contributors in Cargo.toml file
+        run: |
+          names=()
+          for url in $(curl -s $GITHUB_API_URL/repos/$GITHUB_REPOSITORY/contributors?per_page=100 --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}"| jq -r '.[] | select(.type=="User") | .url'); do
+            name=$(curl -s $url --header "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" | jq -r 'if (.name == null or .name == "null") then .login else .name end');
+            names+=("$name");
+          done
+          names_list=$(jq --compact-output --null-input '$ARGS.positional' --args -- "${names[@]}")
+          echo $names_list
+          sed -i "/authors/c\authors = $names_list" Cargo.toml
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: 'Automatically updated Authors and version'
+          branch: 'master'

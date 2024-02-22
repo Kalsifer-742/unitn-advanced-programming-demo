@@ -1,0 +1,24 @@
+[package]
+authors = ["Federico Frigerio","Federico Menegoz","Filippo Lollato","iwannabeacookie","MocDenny","Salvatore Gilles Cassarà","Davide Castellani","Alessio Blascovich","Marco ཀ ʖ̯ ཀ","Praisethefab","Giuliopime","Alessio Amiri","Andrea Bissoli","Sasso0101","Lorysmutti","m0rg123","mpossamai107","Alessio Faieta","timmfy","Guglielmo Boi","SaraFrancavilla","thegavereguy","GioGio31","Alessandro Guida","Gianluca R.","Luca Podavini"]
+name = "robotics_lib"
+version = "0.1.22"
+edition = "2021"
+exclude = [".*"]
+description = "Robotic Lib: common library of the advanced programming course project, year 2023/2024"
+documentation = "https://advancedprogramming.disi.unitn.it/docs/robotics_lib/0.1.20/doc/robotics_lib/index.html"
+readme = "README.md"
+homepage = "https://github.com/Advanced-Programming-2023/Robotic-Lib"
+repository = "https://github.com/Advanced-Programming-2023/Robotic-Lib"
+license-file = "LICENSE.txt"
+keywords = ["robot"]
+
+[lib]
+name = "robotics_lib"
+path = "src/lib.rs"
+
+[dependencies]
+lazy_static = "1.4.0"
+rand = { version = "0.8.5", features = [] }
+strum = "0.26.1"
+strum_macros = { version = "0.26.1", features = [] }
+serde = { version = "1.0.193", features = ["derive"] }

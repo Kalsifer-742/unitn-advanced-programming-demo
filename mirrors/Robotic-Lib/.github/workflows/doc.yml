@@ -1,0 +1,55 @@
+name: Documentation
+
+on:
+  push:
+    branches: [ "master"]
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  doc:
+    runs-on: [self-hosted, linux] 
+    environment:
+      name: documentation
+    steps:
+    - uses: actions/checkout@v3
+    - name: Download doc
+      run: |
+        git clone https://${{ secrets.DOC_TOKEN }}@github.com/Advanced-Programming-2023/Documentation.git tmp
+    - name: Clean doc repo
+      continue-on-error: true
+      run: |
+        rm ./tmp/main.md
+        rm -rf ./tmp/lib
+    - name: Cargo version
+      run: cargo --version
+    - name: Install cargo-readme
+      run: cargo install cargo-readme
+    - name: Update local toolchain
+      run: |
+        rustup update
+        cargo install-update -a
+    - name: Create doc
+      run: |
+        cargo readme -i "./bin/src/main.rs" > "./tmp/main.md"
+        mkdir ./tmp/lib
+        for folder in src/*/; do
+          foldername="${folder//src\//}"
+        	mkdir ./tmp/lib/$foldername
+        	for file in $folder/*.rs; do
+            filename="${file//$folder/}"
+            sed -i -e 's/\/\/\//\/\/!/g' $file
+        		cargo readme -i "$file" > "./tmp/lib/$foldername/${filename//.rs/.md}"
+        	done
+        done
+    - name: Commit & Push changes
+      continue-on-error: true
+      run: |
+        cd tmp
+        git config user.email "davide.castellani-1@studenti.unitn.it"
+        git config user.name "Davide Castellani"
+        git add .
+        git commit -m "autopublish ${date}"
+        git push https://${{ secrets.DOC_TOKEN }}@github.com/Advanced-Programming-2023/Documentation.git

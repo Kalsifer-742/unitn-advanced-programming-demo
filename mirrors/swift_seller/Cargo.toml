@@ -1,0 +1,16 @@
+[package]
+authors = ["Andrea Ervetti", "Silvanus Bordignon"]
+name = "swift_seller"
+version = "0.1.3"
+edition = "2021"
+exclude = [".*"]
+publish = ["kellnr"]
+
+[lib]
+name = "swift_seller"
+path = "src/lib.rs"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+robotics_lib = { version = "0.1.21", registry = "kellnr" }

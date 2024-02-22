@@ -1,0 +1,82 @@
+name: TestPullRequest
+
+on:
+  pull_request:
+    branches: [ "master" ]
+
+env:
+  CARGO_TERM_COLOR: always
+  FILES: results.xml
+  RUST_BACKTRACE: 1
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  testPullRequest:
+    runs-on: [ self-hosted, linux ]
+
+    steps:
+      - uses: actions/checkout@v4
+      - name: Checkout PR
+        id: checkout
+        run: |
+          gh pr checkout ${{ github.event.pull_request.number }}
+
+      - name: Update local toolchain
+        id: updateToolchain
+        run: |
+          rustup update
+          cargo install-update -a
+
+      - name: Toolchain info
+        id: info
+        run: |
+          echo "# Rust toolchain info" >> $GITHUB_STEP_SUMMARY
+          cargo --version --verbose >> $GITHUB_STEP_SUMMARY
+          rustc --version >> $GITHUB_STEP_SUMMARY
+          cargo clippy --version >> $GITHUB_STEP_SUMMARY
+          rustfmt --version >> $GITHUB_STEP_SUMMARY
+
+      - name: Check RustFmt
+        id: checkFmt
+        continue-on-error: true
+        uses: actions-rust-lang/rustfmt@v1
+
+      - name: Comment pull request
+        id: commentPr
+        if: steps.checkFmt.outcome == 'failure'
+        uses: ntsd/auto-request-changes-action@v2
+        with:
+          comment-body: "The code is not formatted correctly, please apply rust fmt with ```cargo fmt --all``` and commit the changes"
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Check Clippy
+        uses: actions-rs/clippy-check@v1
+        continue-on-error: true
+        id: checkClippy
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          args: --all-features
+
+      - name: Generate test result and coverage report
+        id: runTests
+        shell: bash
+        run: |
+          rustup override set nightly
+          cargo test --all-features --workspace --message-format json --color=never --no-fail-fast -- -Z unstable-options --format json | cargo2junit > results.xml;
+
+      - name: Restore Toolchain
+        id: restoreToolchain
+        if: always()
+        shell: bash
+        run: |
+          rustup override set stable
+
+      - name: Upload test results
+        id: uploadTest
+        if: always()
+        shell: bash
+        run: |
+          echo '##[group]Publish Test Results'
+          source /runner/venv/bin/activate
+          python3 /runner/python/publish_test_results.py
+          echo '##[endgroup]'
