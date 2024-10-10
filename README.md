@@ -1,5 +1,7 @@
 # `#![allow(bad_code)]` Demo 
-### Advanced Programming course 2023/2024 - UniTN - prof. Patrignani
+
+> [!NOTE]
+> ### Advanced Programming course 2023/2024 - UniTN - prof. Patrignani
 
 ## Description
 
